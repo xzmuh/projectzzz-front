@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="main">
+        <div class="main-text">
+            <div class="logo">
+                <i class="fa-solid fa-staff-snake"></i><h6>Projectzzz</h6>
+            </div>
+            <h3>Faça seu login na plataforma</h3>
+        </div>
+        <div class="dados-login">
+            <div class="content">
+                <form action="" method="POST" id="register">
+                    <input type="text" placeholder="E-mail" id="email">
+                    <input type="text" placeholder="Senha" id="senha">
+                    <p><a [routerLink]="['/recover-password']">Esqueci minha senha</a></p>
+                    <button><a [routerLink]="['/home']">Entrar</a></button>
+                    <label>Não tem uma conta?<p><a [routerLink]="['/cadastro']">Registre-se</a></p></label>
+                    <hr>
+                    <div class="footer-login">
+                        <label>Ou entre com</label>
+                        <button><i class="fa-solid fa-heart-pulse"></i>Fastz+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

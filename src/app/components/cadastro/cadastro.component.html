@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="main">
+        <div class="main-text-ocult">
+            <div class="logo-ocult">
+                <i class="fa-solid fa-staff-snake"></i><h6>Projectzzz</h6>
+            </div>
+        </div>
+        <div class="dados-register">
+            <div class="content">
+                <form id="register">
+                    <p>Registre-se</p>
+                    <input type="text" placeholder="Seu nome" name="nome" id="nome" formControlName="nome" required>
+                    <input type="text" placeholder="Seu E-mail" name="email" id="email" formControlName="email" required>
+                    <input type="text" placeholder="Sua senha" name="senha" id="senha" formControlName="senha" required>
+                    <input type="text" placeholder="Confirme sua senha" name="senha-rpt" id="senha-rpt" required>
+                    <div class="aceite">
+                        <span>Ao se registrar, você aceita nossos <a [routerLink]="['/termos']" target="_blank">termos de uso</a> e a nossa <a [routerLink]="['/termos']" target="_blank">política de privacidade.</a></span>
+                    </div>
+                    <hr>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="main-text">
+            <div class="logo">
+                <i class="fa-solid fa-staff-snake"></i><h6>Projectzzz</h6>
+            </div>
+            <h3>Crie sua conta</h3>
+            <p><a [routerLink]="['']"><i class="fa-solid fa-arrow-left"></i>&nbsp;Voltar ao Login</a></p>
+        </div>
+    </div>
+</div>

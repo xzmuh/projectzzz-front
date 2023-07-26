@@ -1,0 +1,230 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300); 
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 450px;
+    gap: 4%;
+}
+
+.logo{
+    display: flex;
+    margin-bottom: 12%;
+    margin-top: -50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i{
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.main-text{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 2%;
+    font-size: 42px;
+    line-height: 64px;
+    color: #c4ff30;
+}
+
+.dados-login {
+    width: 50%;
+    height: 102%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202024;
+    border-radius: 5px;
+    /* border: 1px black solid; */
+    box-shadow: 1px 2px 3px #1c1b244a, 0 0 5px rgba(204, 237, 0, 0.5);
+    max-width: 75%;
+  }
+
+.content{
+    max-width: 300px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px black solid; */
+}
+
+input{
+    margin-bottom: 4%;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    background: #121214;
+    border-color: #121214;
+    color: rgb(0, 0, 0);
+    padding: 0px 1em 0px 2.65em;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.5s;
+}
+
+.content > form > p{
+    color: #CCED00;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8%;
+    cursor: pointer;
+}
+
+.content > form > p:hover{
+    transition: 0.4s;
+    color: #9eb507;
+}
+
+input[type=text]:focus {
+    border: 2px solid #CCED00;
+  }
+
+button{
+    width: 100%;
+    background: #b3ce04;
+    border-radius: 5px;
+    border: 0px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    height: 45px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+button:hover{
+    background: #9eb507;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+    font-size: 14px;
+    margin-bottom: 6%;
+    color: rgb(206, 205, 205)
+}
+
+label > p{
+    color: #CCED00;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+
+
+    label > p:hover {
+        color: #9eb507;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+}
+
+hr{
+    border: 1px solid #d9dbff;
+}
+
+.footer-login{
+    margin-top: 6%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-login label{
+    margin-right: -1px;
+    color: rgb(206, 205, 205)
+}
+
+.footer-login > button{
+    width: 69%;
+    height: 45px;
+    margin-left: 2%;
+    background-color: #c9db54;
+}
+
+.footer-login button:hover{
+    background: #9eb507;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+button i{
+    margin-right: 2%;
+}
+
+p > a{
+    color: #CCED00;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+p > a:hover{
+    color: #9eb507;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button > a{
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+    .main{
+        width: 80%;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-text > h3{
+        display: none;
+    }
+
+    .dados-login{
+        padding-top: 48px;
+        width: 100%;
+        height: 400px;
+        margin-bottom: 10%;
+    }
+
+    .logo{
+        margin: 5% 0;
+    }
+
+    .dados-login > form{
+        padding-top: 20px;
+    }
+}
+
