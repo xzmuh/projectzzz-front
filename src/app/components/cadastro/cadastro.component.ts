@@ -8,6 +8,7 @@ import { typeNovoUsuario } from '../services/typeUsers';
 })
 export class CadastroComponent{
 
+  msgEmail: any;
   error: any;
   response: string = '';
 
@@ -22,13 +23,16 @@ export class CadastroComponent{
 
   cadastraNovoUsuario() {
     this.response = '';
-    console.log(this.user_senha)
-    console.log(this.user_senhaRpt)
+
     if (this.user_senha === this.user_senhaRpt) {
       this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
-        this.usuarioCadastradoAviso();
-        this.limparDados();
-        this.response = 'Usuário criado com sucesso!';
+        this.msgEmail = response;
+        if (this.msgEmail.alert) {
+          this.emailCadastradoAviso();
+        } else {
+          this.usuarioCadastradoAviso();
+          this.limparDados();
+        }
       }, (error) => {
         console.log('Erro ao criar usuário:', error);
         this.response = "Erro ao criar usuário.";
@@ -61,6 +65,16 @@ export class CadastroComponent{
 
     setTimeout(() => {
       avisoSenha.classList.remove('open');
+    }, 3000);
+
+  }
+
+  emailCadastradoAviso() {
+    const alertaEmail = (document.querySelector(".alertaEmail") as HTMLElement)
+    alertaEmail.classList.add('open');
+
+    setTimeout(() => {
+      alertaEmail.classList.remove('open');
     }, 3000);
 
   }
