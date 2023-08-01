@@ -9,15 +9,15 @@
             <div class="content">
                 <form id="register">
                     <p>Registre-se</p>
-                    <input type="text" placeholder="Seu nome" name="nome" id="nome" formControlName="nome" required>
-                    <input type="text" placeholder="Seu E-mail" name="email" id="email" formControlName="email" required>
-                    <input type="text" placeholder="Sua senha" name="senha" id="senha" formControlName="senha" required>
-                    <input type="text" placeholder="Confirme sua senha" name="senha-rpt" id="senha-rpt" required>
+                    <input type="text" placeholder="Seu nome" name="user_nome" id="user_nome" [(ngModel)]="user_nome" required>
+                    <input type="text" placeholder="Seu E-mail" name="user_email" id="user_email" [(ngModel)]="user_email" required>
+                    <input type="password" placeholder="Sua senha" name="user_senha" id="user_senha" [(ngModel)]="user_senha" required>
+                    <input type="password" placeholder="Confirme sua senha" name="user_senhaRpt" id="user_senhaRpt" [(ngModel)]="user_senhaRpt" required>
                     <div class="aceite">
                         <span>Ao se registrar, você aceita nossos <a [routerLink]="['/termos']" target="_blank">termos de uso</a> e a nossa <a [routerLink]="['/termos']" target="_blank">política de privacidade.</a></span>
                     </div>
                     <hr>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit" (click)="cadastraNovoUsuario();">Cadastrar</button>
                 </form>
             </div>
         </div>
@@ -29,4 +29,10 @@
             <p><a [routerLink]="['']"><i class="fa-solid fa-arrow-left"></i>&nbsp;Voltar ao Login</a></p>
         </div>
     </div>
+</div>
+<div class="alerta">
+    <p><i class="fa-solid fa-triangle-exclamation"></i> Verifique as senhas digitadas !!</p>
+</div>
+<div class="cadSuccesso">
+    <p><i class="fa-regular fa-circle-check"></i> Usuário cadastrado com sucesso !!</p>
 </div>
