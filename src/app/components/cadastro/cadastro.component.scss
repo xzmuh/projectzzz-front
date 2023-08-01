@@ -104,7 +104,7 @@ input{
     font-size: 16px;
     background: #121214;
     border-color: #121214;
-    color: rgb(0, 0, 0);
+    color: #deff05;
     padding: 0px 1em 0px 2.65em;
     border-radius: 5px;
     outline: none;
@@ -120,6 +120,7 @@ input{
 }
 
 input[type=text]:focus {
+    color: rgb(255, 255, 255);
     border: 2px solid #9eb507;
   }
 
@@ -220,6 +221,57 @@ p > a:hover{
 
 .main-text-ocult{
     display: none;
+}
+
+.alerta {
+    background-color: #fa131310;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(209, 37, 37);
+    border: 3px solid #9b0e0e;
+    padding: 15px;
+    opacity: 0; /* Começa invisível (opacity: 0) */
+    transition: opacity 1.2s; /* Adicionando a transição de 0.5 segundos para a propriedade opacity */
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.alerta.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
+.cadSuccesso {
+    background-color: #d4e850;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    border: 3px solid #434f03a8;
+    opacity: 0; /* Começa invisível (opacity: 0) */
+    transition: opacity 1.2s; /* Adicionando a transição de 0.5 segundos para a propriedade opacity */
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.cadSuccesso.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
 }
 
 @media (max-width: 900px) {
