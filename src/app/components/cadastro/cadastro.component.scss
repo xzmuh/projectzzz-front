@@ -224,20 +224,19 @@ p > a:hover{
 }
 
 .alerta {
+    animation: transp-transition 1s;
     background-color: #fa131310;
     position: absolute;
     bottom: 40px;
     left: 40px;
     height: 7%;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     color: rgb(209, 37, 37);
     border: 3px solid #9b0e0e;
     padding: 15px;
-    opacity: 0; /* Começa invisível (opacity: 0) */
-    transition: opacity 1.2s; /* Adicionando a transição de 0.5 segundos para a propriedade opacity */
 
     p {
         font-size: 18px;
@@ -250,19 +249,18 @@ p > a:hover{
 }
 
 .cadSuccesso {
+    animation: transp-transition 1s;
     background-color: #d4e850;
     position: absolute;
     bottom: 40px;
     left: 40px;
     height: 7%;
     justify-content: center;
-    display: flex;
+    display: none;
     align-items: center;
     padding: 15px;
     border-radius: 5px;
     border: 3px solid #434f03a8;
-    opacity: 0; /* Começa invisível (opacity: 0) */
-    transition: opacity 1.2s; /* Adicionando a transição de 0.5 segundos para a propriedade opacity */
 
     p {
         font-size: 16px;
@@ -272,6 +270,46 @@ p > a:hover{
 .cadSuccesso.open {
     display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
     opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
+.alertaEmail {
+    animation: transp-transition 1s;
+    background-color: #e68d1126;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    justify-content: center;
+    display: none;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: rgb(251, 105, 52);
+    border: 3px solid rgb(251, 105, 52);
+    display: none;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.alertaEmail.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
+@keyframes transp-transition {
+    0% {opacity: 0;
+        transition: opacity 1.2s;
+    }
+    100% {
+        opacity: 1;
+        transition: opacity 1.2s;
+    }
+    0% {
+        opacity: 0;
+       
+    }
 }
 
 @media (max-width: 900px) {
