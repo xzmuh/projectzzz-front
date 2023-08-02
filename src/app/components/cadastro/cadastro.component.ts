@@ -55,7 +55,7 @@ export class CadastroComponent{
 
     setTimeout(() => {
       avisoCadastrado.classList.remove('open');
-    }, 3000);
+    }, 4000);
 
   }
 
@@ -65,7 +65,7 @@ export class CadastroComponent{
 
     setTimeout(() => {
       avisoSenha.classList.remove('open');
-    }, 3000);
+    }, 4000);
 
   }
 
@@ -75,7 +75,7 @@ export class CadastroComponent{
 
     setTimeout(() => {
       alertaEmail.classList.remove('open');
-    }, 3000);
+    }, 4000);
 
   }
 

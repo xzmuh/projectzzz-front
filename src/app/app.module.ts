@@ -9,6 +9,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { HomeComponent } from './components/home/home.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { FormsModule } from '@angular/forms';
+import { TermosComponent } from './components/termos/termos.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     CadastroComponent,
     HomeComponent,
-    RecuperarSenhaComponent
+    RecuperarSenhaComponent,
+    TermosComponent
     
   ],
   imports: [
