@@ -23,6 +23,7 @@ export class CadastroComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    console.log(this.desabilitaForm)
     if (this.desabilitaForm == false) {
       this.desabilitaBotao() 
     }
@@ -32,7 +33,7 @@ export class CadastroComponent implements OnInit{
   cadastraNovoUsuario() {
     this.response = '';
     console.log(this.desabilitaForm)
-    if( this.desabilitaForm === false) {
+    if( this.desabilitaForm === true) {
       if (this.user_senha === this.user_senhaRpt) {
         this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
           this.msgEmail = response;
@@ -58,7 +59,7 @@ export class CadastroComponent implements OnInit{
   validaForm (event: any) {
     if (this.user_nome && this.user_email && this.user_senha && this.user_senhaRpt) {
 
-      this.desabilitaForm = false;
+      this.desabilitaForm = true;
 
       const desabilitado = (document.querySelector("#btn-desabilitado") as HTMLElement)
       desabilitado.classList.remove('desabilitado');
@@ -66,20 +67,21 @@ export class CadastroComponent implements OnInit{
       const btn15 = (document.querySelector("#btn-desabilitado") as HTMLElement)
       btn15.classList.add('btn-15');
 
-      return false;
+      return true;
 
     } else {
-      this.desabilitaForm = true;
-      return true;
+      this.desabilitaForm = false;
+      return false;
     }
   }
 
   limparDados() {
-    this.desabilitaForm = true;
+    this.desabilitaForm = false;
     this.user_email = '';
     this.user_nome = '';
     this.user_senha = '' ;
     this.user_senhaRpt ='';
+    this.desabilitaBotao()
   }
 
   desabilitaBotao() {
