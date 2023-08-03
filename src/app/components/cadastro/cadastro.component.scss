@@ -285,6 +285,31 @@ p > a:hover{
     display: none;
 }
 
+.email-invalido {
+    animation: transp-transition 1s;
+    background-color: #fa131310;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(209, 37, 37);
+    border: 3px solid #9b0e0e70;
+    padding: 15px;
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.email-invalido.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
 .alerta {
     animation: transp-transition 1s;
     background-color: #fa131310;
@@ -297,7 +322,7 @@ p > a:hover{
     align-items: center;
     border-radius: 5px;
     color: rgb(209, 37, 37);
-    border: 3px solid #9b0e0e;
+    border: 3px solid #9b0e0e70;
     padding: 15px;
 
     p {

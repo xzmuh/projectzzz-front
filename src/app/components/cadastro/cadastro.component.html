@@ -10,7 +10,7 @@
                 <form id="register" (ngSubmit)="cadastraNovoUsuario()">
                     <p>Registre-se</p>
                     <input type="text" placeholder="Seu apelido" name="user_nome" id="user_nome" [(ngModel)]="user_nome" (input)="validaForm($event)" required>
-                    <input type="text" placeholder="Seu E-mail" name="user_email" id="user_email" [(ngModel)]="user_email" (input)="validaForm($event)" required>
+                    <input type="email" placeholder="Seu E-mail" name="user_email" id="user_email" [(ngModel)]="user_email" (input)="validaForm($event)" required>
                     <input type="password" placeholder="Sua senha" name="user_senha" id="user_senha" [(ngModel)]="user_senha" (input)="validaForm($event)" required>
                     <input type="password" placeholder="Confirme sua senha" name="user_senhaRpt" id="user_senhaRpt" [(ngModel)]="user_senhaRpt" (input)="validaForm($event)" required>
                     <div class="aceite">
@@ -41,4 +41,7 @@
 </div>
 <div class="preencherCampos">
     <p><i class="fa-solid fa-circle-info"></i> É necessário preencher todos os campos !!</p>
+</div>
+<div class="email-invalido">
+    <p><i class="fa-solid fa-circle-info"></i> O formato do e-mail é inválido. Verifique !!</p>
 </div>

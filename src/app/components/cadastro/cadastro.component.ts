@@ -16,6 +16,9 @@ export class CadastroComponent implements OnInit{
   user_email!: string;
   user_senha!: string;
   user_senhaRpt!: string;
+
+  emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
   desabilitaForm: boolean = false;
   
   constructor(private userApiService: userApiService) {
@@ -32,23 +35,27 @@ export class CadastroComponent implements OnInit{
   
   cadastraNovoUsuario() {
     this.response = '';
-    console.log(this.desabilitaForm)
+
     if( this.desabilitaForm === true) {
-      if (this.user_senha === this.user_senhaRpt) {
-        this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
-          this.msgEmail = response;
-          if (this.msgEmail.alert) {
-            this.emailCadastradoAviso();
-          } else {
-            this.usuarioCadastradoAviso();
-            this.limparDados();
-          }
-        }, (error) => {
-          console.log('Erro ao criar usuário:', error);
-          this.response = "Erro ao criar usuário.";
-        })
+      if (this.validarEmail() == true) {
+        if (this.user_senha === this.user_senhaRpt) {
+          this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
+            this.msgEmail = response;
+            if (this.msgEmail.alert) {
+              this.emailCadastradoAviso();
+            } else {
+              this.usuarioCadastradoAviso();
+              this.limparDados();
+            }
+          }, (error) => {
+            console.log('Erro ao criar usuário:', error);
+            this.response = "Erro ao criar usuário.";
+          })
+        } else {
+          this.senhasDiferentesAviso();
+        }
       } else {
-        this.senhasDiferentesAviso();
+        this.emailInvalidoAviso();
       }
     } else {
       this.preencherCamposAviso();
@@ -71,6 +78,14 @@ export class CadastroComponent implements OnInit{
 
     } else {
       this.desabilitaForm = false;
+      return false;
+    }
+  }
+
+  validarEmail() {
+    if (this.emailRegex.test(this.user_email)) {
+      return true;
+    } else {
       return false;
     }
   }
@@ -98,7 +113,6 @@ export class CadastroComponent implements OnInit{
     setTimeout(() => {
       avisoCadastrado.classList.remove('open');
     }, 4000);
-
   }
 
   senhasDiferentesAviso() {
@@ -108,7 +122,6 @@ export class CadastroComponent implements OnInit{
     setTimeout(() => {
       avisoSenha.classList.remove('open');
     }, 4000);
-
   }
 
   emailCadastradoAviso() {
@@ -118,7 +131,6 @@ export class CadastroComponent implements OnInit{
     setTimeout(() => {
       alertaEmail.classList.remove('open');
     }, 4000);
-
   }
 
   preencherCamposAviso() {
@@ -128,7 +140,15 @@ export class CadastroComponent implements OnInit{
     setTimeout(() => {
       preencherCampos.classList.remove('open');
     }, 4000);
+  }
 
+  emailInvalidoAviso() {
+    const emailInvalido = (document.querySelector(".email-invalido") as HTMLElement)
+    emailInvalido.classList.add('open');
+
+    setTimeout(() => {
+      emailInvalido.classList.remove('open');
+    }, 4000);
   }
 
 }
