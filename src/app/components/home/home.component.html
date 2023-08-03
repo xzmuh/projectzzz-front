@@ -1,1 +1,44 @@
-<p>home works!</p>
+<div class="container">
+
+    <div class="btnAbre" (click)="openMenu();">
+        <span class="fa-solid fa-bars"></span>
+    </div>
+    <nav class="menu-lateral">
+        <div class="center-menu">
+            <div class="titulo">
+                <i class="fa-solid fa-staff-snake"></i>Projectzzz
+                <span class="fa-solid fa-bars btnFecha" (click)="openMenu();"></span>
+            </div>
+            <ul>
+                <li class="has-subnav">
+                    <a href="#" class="side-menu">
+                        <i class="fa-solid fa-magnifying-glass"></i><span class="nav-text">
+                            Buscar
+                        </span>
+                    </a>
+                    <a href="#" class="side-menu">
+                        <i class="fa-brands fa-dashcube"></i><span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                    <a href="#" class="side-menu">
+                        <i class="fa-solid fa-layer-group"></i><span class="nav-text">
+                            Coleções
+                        </span>
+                    </a>
+                    <a href="#" class="side-menu">
+                        <i class="fa-solid fa-spa"></i><span class="nav-text">
+                            Plants
+                        </span>
+                    </a>
+                    <a href="#" class="side-menu">
+                        <i class="fa-solid fa-gear"></i><span class="nav-text">
+                            Ajustes
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </div>
+    </nav>
+</div>
+<script type="text/javascript" src="/src/app/components/home/home.js"></script>
