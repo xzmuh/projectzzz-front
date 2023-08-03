@@ -75,9 +75,21 @@ export class CadastroComponent implements OnInit{
       btn15.classList.add('btn-15');
 
       return true;
+    } else if (!this.user_nome || !this.user_email || !this.user_senha || !this.user_senhaRpt) {
 
-    } else {
+      const desabilitado = (document.querySelector("#btn-desabilitado") as HTMLElement)
+      desabilitado.classList.add('desabilitado');
+
+      const btn15 = (document.querySelector("#btn-desabilitado") as HTMLElement)
+      btn15.classList.remove('btn-15');
+
       this.desabilitaForm = false;
+
+      return false
+    } else {
+
+      this.desabilitaForm = false;
+
       return false;
     }
   }
