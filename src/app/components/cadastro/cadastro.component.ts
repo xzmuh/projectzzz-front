@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { userApiService } from 'src/app/components/services/user-services.service';
 import { typeNovoUsuario } from '../services/typeUsers';
 @Component({
@@ -6,7 +6,7 @@ import { typeNovoUsuario } from '../services/typeUsers';
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
-export class CadastroComponent{
+export class CadastroComponent implements OnInit{
 
   msgEmail: any;
   error: any;
@@ -16,15 +16,23 @@ export class CadastroComponent{
   user_email!: string;
   user_senha!: string;
   user_senhaRpt!: string;
+  desabilitaForm: boolean = false;
   
   constructor(private userApiService: userApiService) {
 
   }
 
+  ngOnInit(): void {
+    if (this.desabilitaForm == false) {
+      this.desabilitaBotao() 
+    }
+
+  }
+  
   cadastraNovoUsuario() {
     this.response = '';
-
-    if( this.validaForm() == true ) {
+    console.log(this.desabilitaForm)
+    if( this.desabilitaForm === false) {
       if (this.user_senha === this.user_senhaRpt) {
         this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
           this.msgEmail = response;
@@ -47,19 +55,38 @@ export class CadastroComponent{
     
   }
 
-  validaForm () {
+  validaForm (event: any) {
     if (this.user_nome && this.user_email && this.user_senha && this.user_senhaRpt) {
-      return true;
-    } else {
+
+      this.desabilitaForm = false;
+
+      const desabilitado = (document.querySelector("#btn-desabilitado") as HTMLElement)
+      desabilitado.classList.remove('desabilitado');
+
+      const btn15 = (document.querySelector("#btn-desabilitado") as HTMLElement)
+      btn15.classList.add('btn-15');
+
       return false;
+
+    } else {
+      this.desabilitaForm = true;
+      return true;
     }
   }
 
   limparDados() {
-    this.user_nome = '';
+    this.desabilitaForm = true;
     this.user_email = '';
-    this.user_senha = '';
-    this.user_senhaRpt = '';
+    this.user_nome = '';
+    this.user_senha = '' ;
+    this.user_senhaRpt ='';
+  }
+
+  desabilitaBotao() {
+    const desabilitado = (document.querySelector("#btn-desabilitado") as HTMLElement)
+    desabilitado.classList.add('desabilitado');
+    const btn15 = (document.querySelector(".btn-15") as HTMLElement)
+    btn15.classList.remove('btn-15');
   }
 
   usuarioCadastradoAviso() {

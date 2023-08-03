@@ -7,17 +7,17 @@
         </div>
         <div class="dados-register">
             <div class="content">
-                <form id="register">
+                <form id="register" (ngSubmit)="cadastraNovoUsuario()">
                     <p>Registre-se</p>
-                    <input type="text" placeholder="Seu apelido" name="user_nome" id="user_nome" [(ngModel)]="user_nome" required>
-                    <input type="text" placeholder="Seu E-mail" name="user_email" id="user_email" [(ngModel)]="user_email" required>
-                    <input type="password" placeholder="Sua senha" name="user_senha" id="user_senha" [(ngModel)]="user_senha" required>
-                    <input type="password" placeholder="Confirme sua senha" name="user_senhaRpt" id="user_senhaRpt" [(ngModel)]="user_senhaRpt" required>
+                    <input type="text" placeholder="Seu apelido" name="user_nome" id="user_nome" [(ngModel)]="user_nome" (input)="validaForm($event)" required>
+                    <input type="text" placeholder="Seu E-mail" name="user_email" id="user_email" [(ngModel)]="user_email" (input)="validaForm($event)" required>
+                    <input type="password" placeholder="Sua senha" name="user_senha" id="user_senha" [(ngModel)]="user_senha" (input)="validaForm($event)" required>
+                    <input type="password" placeholder="Confirme sua senha" name="user_senhaRpt" id="user_senhaRpt" [(ngModel)]="user_senhaRpt" (input)="validaForm($event)" required>
                     <div class="aceite">
                         <span>Ao se registrar, você aceita nossos <a [routerLink]="['/termos']" target="_blank">termos de uso</a> e a nossa <a [routerLink]="['/termos']" target="_blank">política de privacidade.</a></span>
                     </div>
                     <hr>
-                    <button class="custom-btn btn-15" type="submit" (click)="cadastraNovoUsuario();">CADASTRAR</button>
+                    <button id="btn-desabilitado" class="custom-btn btn-15" type="submit" [disabled]="desabilitaForm">CADASTRAR</button>
                 </form>
             </div>
         </div>
