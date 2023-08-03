@@ -317,6 +317,32 @@ p > a:hover{
     opacity: 1; /* Torna o elemento visível (opacity: 1) */
 }
 
+.preencherCampos {
+    animation: transp-transition 1s;
+    background-color: #e68d1126;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    justify-content: center;
+    display: none;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: rgb(251, 105, 52);
+    border: 3px solid rgb(251, 105, 52);
+    display: none;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.preencherCampos.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
 .alertaEmail {
     animation: transp-transition 1s;
     background-color: #e68d1126;

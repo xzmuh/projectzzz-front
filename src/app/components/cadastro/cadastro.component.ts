@@ -16,29 +16,42 @@ export class CadastroComponent{
   user_email!: string;
   user_senha!: string;
   user_senhaRpt!: string;
-
+  
   constructor(private userApiService: userApiService) {
-    
+
   }
 
   cadastraNovoUsuario() {
     this.response = '';
 
-    if (this.user_senha === this.user_senhaRpt) {
-      this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
-        this.msgEmail = response;
-        if (this.msgEmail.alert) {
-          this.emailCadastradoAviso();
-        } else {
-          this.usuarioCadastradoAviso();
-          this.limparDados();
-        }
-      }, (error) => {
-        console.log('Erro ao criar usuário:', error);
-        this.response = "Erro ao criar usuário.";
-      })
+    if( this.validaForm() == true ) {
+      if (this.user_senha === this.user_senhaRpt) {
+        this.userApiService.insereNovoUsuario(this.user_nome, this.user_email, this.user_senha).subscribe((response) => {
+          this.msgEmail = response;
+          if (this.msgEmail.alert) {
+            this.emailCadastradoAviso();
+          } else {
+            this.usuarioCadastradoAviso();
+            this.limparDados();
+          }
+        }, (error) => {
+          console.log('Erro ao criar usuário:', error);
+          this.response = "Erro ao criar usuário.";
+        })
+      } else {
+        this.senhasDiferentesAviso();
+      }
     } else {
-      this.senhasDiferentesAviso();
+      this.preencherCamposAviso();
+    }
+    
+  }
+
+  validaForm () {
+    if (this.user_nome && this.user_email && this.user_senha && this.user_senhaRpt) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -75,6 +88,16 @@ export class CadastroComponent{
 
     setTimeout(() => {
       alertaEmail.classList.remove('open');
+    }, 4000);
+
+  }
+
+  preencherCamposAviso() {
+    const preencherCampos = (document.querySelector(".preencherCampos") as HTMLElement)
+    preencherCampos.classList.add('open');
+
+    setTimeout(() => {
+      preencherCampos.classList.remove('open');
     }, 4000);
 
   }
