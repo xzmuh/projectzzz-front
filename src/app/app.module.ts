@@ -10,7 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { FormsModule } from '@angular/forms';
 import { TermosComponent } from './components/termos/termos.component';
-import { CadastroConcluidoComponent } from './components/cadastro-concluido/cadastro-concluido.component';
+// import { CadastroConcluidoComponent } from './components/cadastro-concluido/cadastro-concluido.component';
 import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
@@ -21,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     HomeComponent,
     RecuperarSenhaComponent,
     TermosComponent,
-    CadastroConcluidoComponent
+    // CadastroConcluidoComponent
     
   ],
   imports: [
