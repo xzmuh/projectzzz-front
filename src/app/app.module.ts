@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RecuperarSenhaComponent } from './components/recuperar-senha/recuperar-senha.component';
 import { FormsModule } from '@angular/forms';
 import { TermosComponent } from './components/termos/termos.component';
+import { CadastroConcluidoComponent } from './components/cadastro-concluido/cadastro-concluido.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -18,14 +20,16 @@ import { TermosComponent } from './components/termos/termos.component';
     CadastroComponent,
     HomeComponent,
     RecuperarSenhaComponent,
-    TermosComponent
+    TermosComponent,
+    CadastroConcluidoComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
