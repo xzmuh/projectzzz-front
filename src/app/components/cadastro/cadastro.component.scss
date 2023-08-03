@@ -159,6 +159,23 @@ input:focus {
     outline: none;
   }
 
+.custom-btn.desabilitado {
+    border-radius: 5px;
+    width: 100%;
+    height: 45px;
+    background: #b3ce0454;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.539);
+    border-radius: 5px;
+    padding: 10px 25px;
+    cursor: not-allowed;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+  }
+
 .btn-15 {
     border: none;
     z-index: 1;
@@ -268,6 +285,31 @@ p > a:hover{
     display: none;
 }
 
+.email-invalido {
+    animation: transp-transition 1s;
+    background-color: #fa131310;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(209, 37, 37);
+    border: 3px solid #9b0e0e70;
+    padding: 15px;
+
+    p {
+        font-size: 18px;
+    }
+}
+
+.email-invalido.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
 .alerta {
     animation: transp-transition 1s;
     background-color: #fa131310;
@@ -280,7 +322,7 @@ p > a:hover{
     align-items: center;
     border-radius: 5px;
     color: rgb(209, 37, 37);
-    border: 3px solid #9b0e0e;
+    border: 3px solid #9b0e0e70;
     padding: 15px;
 
     p {
@@ -313,6 +355,32 @@ p > a:hover{
 }
 
 .cadSuccesso.open {
+    display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
+    opacity: 1; /* Torna o elemento visível (opacity: 1) */
+}
+
+.preencherCampos {
+    animation: transp-transition 1s;
+    background-color: #e68d1126;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    height: 7%;
+    justify-content: center;
+    display: none;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px;
+    color: rgb(251, 105, 52);
+    border: 3px solid rgb(251, 105, 52);
+    display: none;
+
+    p {
+        font-size: 16px;
+    }
+}
+
+.preencherCampos.open {
     display: flex; /* Muda para display flex quando a classe .mostrar é aplicada */
     opacity: 1; /* Torna o elemento visível (opacity: 1) */
 }
